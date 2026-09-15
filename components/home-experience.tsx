@@ -10,10 +10,13 @@ import {
   Plus,
   X,
 } from "lucide-react";
-import { projectGroups, projects as allProjects, type Project } from "@/data/projects";
+import { projects as allProjects, type Project } from "@/data/projects";
+
+const assetPath = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 function ProjectMedia({ project, secondary = false }: { project: Project; secondary?: boolean }) {
   const media = secondary ? project.secondaryMedia : undefined;
+  const image = secondary ? undefined : project.mediaImage;
   const label = media?.label ?? project.mediaLabel;
   const caption = media?.caption ?? project.mediaCaption;
   const ratio = media?.ratio ?? "16:10";
@@ -21,26 +24,32 @@ function ProjectMedia({ project, secondary = false }: { project: Project; second
 
   return (
     <div
-      className={`project-media ${secondary ? "project-media--secondary" : ""} ${isPortrait ? "project-media--portrait" : ""}`}
+      className={["project-media", secondary ? "project-media--secondary" : "", isPortrait ? "project-media--portrait" : "", image ? "project-media--image" : ""].filter(Boolean).join(" ")}
       style={{ "--accent-a": project.palette[0], "--accent-b": project.palette[1] } as React.CSSProperties}
-      aria-label={`${label}. ${caption}. ${ratio}`}
+      aria-label={label}
     >
-      <div className="media-grid" />
-      <div className="media-orbit media-orbit--one" />
-      <div className="media-orbit media-orbit--two" />
-      <div className="media-topline">
-        <span>{project.number}</span>
-        <span>{ratio}</span>
-      </div>
-      <div className="media-center">
-        <span className="media-kicker">MEDIA PLACEHOLDER</span>
-        <strong>{label}</strong>
-        <span>{caption}</span>
-      </div>
-      <div className="media-bottomline">
-        <span>IMAGE PREPARING</span>
-        <span className="media-dot" />
-      </div>
+      {image ? (
+        <img className="project-media-art" src={assetPath(image.src)} alt={image.alt} />
+      ) : (
+        <>
+          <div className="media-grid" />
+          <div className="media-orbit media-orbit--one" />
+          <div className="media-orbit media-orbit--two" />
+          <div className="media-topline">
+            <span>{project.number}</span>
+            <span>{ratio}</span>
+          </div>
+          <div className="media-center">
+            <span className="media-kicker">MEDIA PLACEHOLDER</span>
+            <strong>{label}</strong>
+            <span>{caption}</span>
+          </div>
+          <div className="media-bottomline">
+            <span>IMAGE PREPARING</span>
+            <span className="media-dot" />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -70,30 +79,23 @@ function Sidebar({
           </a>
           <a className={activeId === "index" ? "is-active" : ""} href="#index" onClick={onNavigate}>
             <span>Все проекты</span>
-            <span className="nav-count">16</span>
+            <span className="nav-count">17</span>
           </a>
         </div>
-        {projectGroups.map((group) => (
-          <div className="nav-group" key={group.label}>
-            <span className="nav-group-label">{group.label}</span>
-            {group.ids.map((id) => {
-              const project = projectsById.get(id);
-              if (!project) return null;
-              return (
-                <a
-                  className={activeId === id ? "is-active" : ""}
-                  href={`#${id}`}
-                  key={id}
-                  onClick={onNavigate}
-                >
-                  <span className="nav-project-number">{project.number}</span>
-                  <span>{project.title}</span>
-                </a>
-              );
-            })}
-          </div>
-        ))}
-      </nav>
+        <div className="nav-group nav-group--ordered">
+          <span className="nav-group-label">ПО ПОРЯДКУ</span>
+          {allProjects.map((project) => (
+            <a
+              className={activeId === project.id ? "is-active" : ""}
+              href={"#" + project.id}
+              key={project.id}
+              onClick={onNavigate}
+            >
+              <span className="nav-project-number">{project.number}</span>
+              <span>{project.title}</span>
+            </a>
+          ))}
+        </div>      </nav>
 
       <div className="sidebar-bottom">
         <span className="status-mark" />
@@ -163,7 +165,7 @@ function ProjectSection({ project }: { project: Project }) {
       <div className="project-shell">
         <div className="project-heading">
           <div className="project-meta">
-            <span>{project.number} / 16</span>
+            <span>{project.number} / 17</span>
             <span>{project.category}</span>
             {project.stage === "working-version" ? <span className="stage-pill">рабочая версия</span> : null}
           </div>
@@ -196,6 +198,19 @@ function ProjectSection({ project }: { project: Project }) {
               <li key={highlight}>{highlight}</li>
             ))}
           </ul>
+          {project.links?.length ? (
+            <nav className="project-links" aria-label={project.title}>
+              <span className="project-links-label">Материалы</span>
+              <div className="project-links-list">
+                {project.links.map((link) => (
+                  <a href={link.url} key={link.url} target="_blank" rel="noreferrer">
+                    {link.label}
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </nav>
+          ) : null}
           <p className="project-fact">{project.smallFact}</p>
         </div>
       </div>
@@ -268,9 +283,12 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
           </div>
           <div className="hero-media" aria-label="толк+юсайт / наши идеи / product lab visual">
             <div className="hero-media-image">
-              <div className="hero-slice hero-slice--one" />
-              <div className="hero-slice hero-slice--two" />
-              <div className="hero-slice hero-slice--three" />
+              <img
+                className="hero-media-image-art"
+                src={assetPath("/images/hero-product-lab.png")}
+                alt="Абстрактная композиция о том, как идея превращается в продукт"
+              />
+              <div className="hero-media-shade" aria-hidden="true" />
               <div className="hero-media-copy">
                 <span>толк+юсайт</span>
                 <strong>Идеи становятся реальностью.</strong>
@@ -289,6 +307,16 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
               <span>должна сразу</span>
               <span className="muted-line">становиться компанией.</span>
             </h2>
+            <div className="manifesto-visual">
+              <img
+                src={assetPath("/images/manifesto-system.png")}
+                alt="Абстрактная схема, в которой идея собирается в ясную систему"
+              />
+              <div className="manifesto-visual-meta" aria-hidden="true">
+                <span>IDEA → SYSTEM</span>
+                <span>толк+юсайт / 02</span>
+              </div>
+            </div>
             <div className="manifesto-bottom">
               <p>
                 Мы исследуем тему, собираем логику продукта, проектируем пользовательский путь, делаем прототипы и проверяем, есть ли у идеи право жить дальше.
@@ -349,3 +377,4 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
     </div>
   );
 }
+

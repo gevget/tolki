@@ -17,6 +17,11 @@ export type Project = {
   statusNote?: string[];
   mediaLabel: string;
   mediaCaption: string;
+  mediaImage?: {
+    src: string;
+    alt: string;
+  };
+  links?: Array<{ label: string; url: string }>;
   secondaryMedia?: {
     label: string;
     caption: string;
@@ -49,6 +54,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "КОМПАС ДУШИ",
     mediaCaption: "PERSONALITY MAP / TELEGRAM UI",
+    mediaImage: {
+      src: "/images/compass-of-soul.png",
+      alt: "Экран результатов продукта «Компас души» с прогрессом, достижениями и маршрутом развития.",
+    },
     secondaryMedia: {
       label: "32 ПАРАМЕТРА",
       caption: "PROFILE SYSTEM / DATA VISUAL",
@@ -83,16 +92,45 @@ export const projects: Project[] = [
     ],
     mediaLabel: "КАТАЛОН",
     mediaCaption: "LOGISTICS OPERATING SYSTEM",
-    secondaryMedia: {
-      label: "КАТАЛОН ПАРТНЁР / СЕТЬ",
-      caption: "REAL PRODUCT UI / DASHBOARD",
-      ratio: "4:3",
+    mediaImage: {
+      src: "/images/catalon.png",
+      alt: "Рабочий интерфейс Каталона с грузами, заявкой, маршрутом и статусами перевозки.",
     },
     palette: ["#b9ff00", "#ff6a24"],
   },
   {
-    id: "my-future",
+    id: "smm-base",
     number: "03",
+    title: "SMMБаза",
+    category: "SMM / SAAS / VK",
+    oneLiner:
+      "Платформа для автопостинга в VK и подготовки отчётов со скриншотами в одном рабочем кабинете.",
+    description: [
+      "SMMБаза помогает командам подключать сообщества VK, объединять их в супергруппы и запускать публикации из единого пространства.",
+      "Система собирает публикации за выбранный период, делает скриншоты по заданным параметрам и формирует понятный отчёт для клиента.",
+    ],
+    highlights: [
+      "Автопостинг через официальный VK API.",
+      "Супергруппы для управления несколькими сообществами как одним проектом.",
+      "Роли команды: главный создатель, управляющие и ответственные сотрудники.",
+      "Отчёты со скриншотами и публикациями за выбранный период.",
+    ],
+    smallFact: "Один рабочий контур для публикаций и отчётов.",
+    theme: "dark",
+    layout: "system",
+    stage: "working-version",
+    statusNote: ["Автопостинг VK и отчёты — рабочий продукт."],
+    mediaLabel: "SMMБАЗА",
+    mediaCaption: "VK PUBLISHING / SCREENSHOT REPORTS",
+    mediaImage: {
+      src: "/images/smm-base.png",
+      alt: "Рабочий кабинет SMMБазы с проектами, публикациями и отчётами.",
+    },
+    links: [{ label: "Ссылка на сайт", url: "https://gevget.github.io/smmbaza/" }],
+    palette: ["#00c9a7", "#f2e63b"],
+  },  {
+    id: "my-future",
+    number: "04",
     title: "Моё будущее",
     category: "GOVTECH / EDTECH / AI",
     oneLiner:
@@ -122,7 +160,7 @@ export const projects: Project[] = [
   },
   {
     id: "my-id",
-    number: "04",
+    number: "05",
     title: "Моё ID",
     category: "IDENTITY / SAAS / CONSUMER",
     oneLiner:
@@ -152,7 +190,7 @@ export const projects: Project[] = [
   },
   {
     id: "joint-purchase-b2b",
-    number: "05",
+    number: "06",
     title: "Совместная закупка B2B",
     category: "HORECA / B2B / MARKETPLACE",
     oneLiner:
@@ -173,11 +211,15 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "СОВМЕСТНАЯ ЗАКУПКА B2B",
     mediaCaption: "HORECA PROCUREMENT PLATFORM",
+    mediaImage: {
+      src: "/images/joint-purchase-b2b.png",
+      alt: "Рабочий интерфейс B2B-платформы совместных закупок с заказами, поставками и каталогом товаров.",
+    },
     palette: ["#ff9745", "#8edd5b"],
   },
   {
     id: "joint-purchase-b2c",
-    number: "06",
+    number: "07",
     title: "Совместная закупка",
     category: "COMMERCE / COMMUNITY",
     oneLiner:
@@ -207,7 +249,7 @@ export const projects: Project[] = [
   },
   {
     id: "legal-bot",
-    number: "07",
+    number: "08",
     title: "ЮРБот",
     category: "LEGALTECH / AI / B2B",
     oneLiner:
@@ -237,7 +279,7 @@ export const projects: Project[] = [
   },
   {
     id: "warehouse-ai",
-    number: "08",
+    number: "09",
     title: "Видеоаналитика складов",
     category: "COMPUTER VISION / WAREHOUSE / B2B",
     oneLiner:
@@ -267,7 +309,7 @@ export const projects: Project[] = [
   },
   {
     id: "bots-widgets",
-    number: "09",
+    number: "10",
     title: "Система чат-ботов и виджетов",
     category: "CONVERSATIONAL AI / SAAS",
     oneLiner:
@@ -288,11 +330,18 @@ export const projects: Project[] = [
     stage: "working-version",
     mediaLabel: "CHAT / WIDGET SYSTEM",
     mediaCaption: "WEB WIDGET + TELEGRAM + OPERATOR",
+    mediaImage: {
+      src: "/images/chatbot.png",
+      alt: "Рабочий интерфейс чат-бота с базой знаний, виджетом, рассылками, магазином и бронированием.",
+    },
+    links: [
+      { label: "Ссылка на блок-схему", url: "https://miro.com/app/board/uXjVO0P0qE8=/?share_link_id=474773434681" },
+    ],
     palette: ["#9b5cff", "#64f0d0"],
   },
   {
     id: "chereda",
-    number: "10",
+    number: "11",
     title: "Chereda",
     category: "EVENTTECH / MARKETPLACE",
     oneLiner:
@@ -313,11 +362,17 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "CHEREDA",
     mediaCaption: "EVENT PROFESSIONALS MARKETPLACE",
+    links: [
+      { label: "Ссылка на блок-схему", url: "https://miro.com/app/board/uXjVO0P0qE8=/?share_link_id=474773434681" },
+      { label: "Ссылка на категории", url: "https://docs.google.com/spreadsheets/d/1bm4KL2xZn8UhJG3NrUK3D1yqD5o3EWRuAUsIbWLJKRQ/edit?usp=sharing" },
+      { label: "Ссылка на логику", url: "https://docs.google.com/document/d/1zo-bIZdLKT-CUoMnh1y9RuI5laqr1hTBpriU8DdNNgA/edit?usp=sharing" },
+      { label: "Ссылка на аналитику", url: "https://docs.google.com/document/d/1S6ugItTnScy_xpwE5k_7dLElqaB-CTabDfQxRY-k1Ks/edit" },
+    ],
     palette: ["#e753b8", "#ff8c38"],
   },
   {
     id: "thatsoil",
-    number: "11",
+    number: "12",
     title: "ThatsOIL",
     category: "AUTO / UTILITY / COMMERCE",
     oneLiner:
@@ -338,11 +393,16 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "THATSOIL",
     mediaCaption: "CAR → OIL MATCHING",
+    links: [
+      { label: "Ссылка на источник рынка", url: "https://www.autostat.ru/press-releases/52507/" },
+      { label: "Ссылка на DRIVE2", url: "https://www.drive2.ru/" },
+      { label: "Ссылка на продвижение", url: "https://exlibris.ru/news/reklamnye-integratsii-u-blogerov-pochemu-eto-vygodno-i-kak-najti-togo-samogo/" },
+    ],
     palette: ["#2357d8", "#e9ff00"],
   },
   {
     id: "sales-platform",
-    number: "12",
+    number: "13",
     title: "Портал продажников",
     category: "SALES / MARKETPLACE / B2B",
     oneLiner:
@@ -367,7 +427,7 @@ export const projects: Project[] = [
   },
   {
     id: "self-employed",
-    number: "13",
+    number: "14",
     title: "Портал самозанятых",
     category: "COMMUNITY / SELF-EMPLOYED",
     oneLiner:
@@ -388,11 +448,15 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ПОРТАЛ САМОЗАНЯТЫХ",
     mediaCaption: "COMMUNITY / JOBS / KNOWLEDGE",
+    links: [
+      { label: "Ссылка на источник ФНС", url: "https://www.nalog.gov.ru/rn77/news/activities_fts/11816919/" },
+      { label: "Ссылка на дизайн-офис", url: "https://www.figma.com/file/WHrmX3ihixyzFZGYhzEgPK/%D1%81%D0%BC%D0%B7?node-id=0%3A1" },
+    ],
     palette: ["#6b5cff", "#ffaf44"],
   },
   {
     id: "accessibility",
-    number: "14",
+    number: "15",
     title: "Навигатор доступности",
     category: "ACCESSIBILITY / SOCIAL / MAPS",
     oneLiner:
@@ -413,11 +477,16 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "НАВИГАТОР ДОСТУПНОСТИ",
     mediaCaption: "ACCESSIBLE MAP / ASSISTANCE",
+    links: [
+      { label: "Ссылка на архитектуру", url: "https://docs.google.com/document/d/1XQ_P04yYmZLyRvdPq5YL1gN4wtCy7a2h6cW-aECeakk/edit#heading=h.rn8h919zyemp" },
+      { label: "Ссылка на блок-схему", url: "https://miro.com/app/board/uXjVPN6FG3c=/?share_link_id=322883191355" },
+      { label: "Ссылка на презентацию", url: "https://cloud.mail.ru/public/Wzv7/72wzQjRu9" },
+    ],
     palette: ["#39aaff", "#ff7e68"],
   },
   {
     id: "queues",
-    number: "15",
+    number: "16",
     title: "Электронные очереди",
     category: "UTILITY / GOVTECH / CITY",
     oneLiner:
@@ -442,7 +511,7 @@ export const projects: Project[] = [
   },
   {
     id: "job-bot",
-    number: "16",
+    number: "17",
     title: "Чат-бот для соискателей",
     category: "HRTECH / AUTOMATION",
     oneLiner:
@@ -467,10 +536,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const projectGroups = [
-  { label: "HUMAN", ids: ["compass", "my-future", "my-id"] },
-  { label: "BUSINESS", ids: ["catalon", "joint-purchase-b2b", "joint-purchase-b2c"] },
-  { label: "AI", ids: ["legal-bot", "warehouse-ai", "bots-widgets"] },
-  { label: "MARKETPLACES", ids: ["chereda", "thatsoil", "sales-platform", "self-employed"] },
-  { label: "UTILITY", ids: ["accessibility", "queues", "job-bot"] },
-];
+
