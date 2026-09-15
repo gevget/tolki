@@ -151,6 +151,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "МОЁ БУДУЩЕЕ",
     mediaCaption: "CHILD PATH + REGIONAL FORECAST",
+    mediaImage: {
+      src: "/images/my-future-v2.png",
+      alt: "Светлая концептуальная сцена о детстве, обучении и выборе будущего пути.",
+    },
     secondaryMedia: {
       label: "5–15 ЛЕТ",
       caption: "FORECAST / REGION DATA VISUALIZATION",
@@ -181,6 +185,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "МОЁ ID",
     mediaCaption: "PERSONAL DIGITAL PROFILE",
+    mediaImage: {
+      src: "/images/my-id-v2.png",
+      alt: "Современная концептуальная сцена о личности, социальных связях и едином цифровом присутствии.",
+    },
     secondaryMedia: {
       label: "moeid.ru/name",
       caption: "MOBILE PROFILE / QR / ACTIONS",
@@ -240,6 +248,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "СОВМЕСТНАЯ ЗАКУПКА",
     mediaCaption: "NEIGHBOURHOOD GROUP ORDER",
+    mediaImage: {
+      src: "/images/joint-purchase-b2c.png",
+      alt: "Соседи объединяют личные корзины в один общий заказ.",
+    },
     secondaryMedia: {
       label: "ОБЩИЙ ПРОГРЕСС",
       caption: "CARTS / TIMER / DISCOUNT",
@@ -270,17 +282,16 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ЮРБОТ",
     mediaCaption: "CONTRACT / 3 AI DEPARTMENTS",
-    secondaryMedia: {
-      label: "LEGAL / BUSINESS / CRISIS",
-      caption: "RISK ANALYSIS UI",
-      ratio: "4:3",
+    mediaImage: {
+      src: "/images/legal-bot.png",
+      alt: "Светлая концептуальная сцена о трёх перспективах ИИ-юриста: правовой, коммерческой и кризисной.",
     },
     palette: ["#ffd600", "#101010"],
   },
   {
     id: "warehouse-ai",
     number: "09",
-    title: "Видеоаналитика складов",
+    title: "Видео-аналитика\nскладов",
     category: "COMPUTER VISION / WAREHOUSE / B2B",
     oneLiner:
       "ИИ-система, которая превращает обычное видеонаблюдение склада в инструмент контроля событий, задач и операционной аналитики.",
@@ -300,6 +311,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ВИДЕОАНАЛИТИКА СКЛАДОВ",
     mediaCaption: "LIVE INCIDENT FEED / WAREHOUSE MAP",
+    mediaImage: {
+      src: "/images/warehouse-ai.png",
+      alt: "Светлый автоматизированный склад с роботами, конвейерами и камерами наблюдения.",
+    },
     secondaryMedia: {
       label: "AI VIDEO EVENT",
       caption: "CAMERA FRAME / DETECTION OVERLAY",
@@ -362,6 +377,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "CHEREDA",
     mediaCaption: "EVENT PROFESSIONALS MARKETPLACE",
+    mediaImage: {
+      src: "/images/chereda-v2.png",
+      alt: "Светлая концептуальная сцена о площадке для организаторов и специалистов событий.",
+    },
     links: [
       { label: "Ссылка на блок-схему", url: "https://miro.com/app/board/uXjVO0P0qE8=/?share_link_id=474773434681" },
       { label: "Ссылка на категории", url: "https://docs.google.com/spreadsheets/d/1bm4KL2xZn8UhJG3NrUK3D1yqD5o3EWRuAUsIbWLJKRQ/edit?usp=sharing" },
@@ -393,6 +412,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "THATSOIL",
     mediaCaption: "CAR → OIL MATCHING",
+    mediaImage: {
+      src: "/images/thatsoil-v2.png",
+      alt: "Светлая концептуальная сцена о подборе моторного масла для автомобиля.",
+    },
     links: [
       { label: "Ссылка на источник рынка", url: "https://www.autostat.ru/press-releases/52507/" },
       { label: "Ссылка на DRIVE2", url: "https://www.drive2.ru/" },
@@ -423,6 +446,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ПОРТАЛ ПРОДАЖНИКОВ",
     mediaCaption: "PRODUCTS / AGENTS / DEALS",
+    mediaImage: {
+      src: "/images/sales-platform-v2.png",
+      alt: "Тёмная концептуальная сцена о продуктах, продавцах и связанных между собой сделках.",
+    },
     palette: ["#ff744b", "#7cf2d1"],
   },
   {
@@ -448,6 +475,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ПОРТАЛ САМОЗАНЯТЫХ",
     mediaCaption: "COMMUNITY / JOBS / KNOWLEDGE",
+    mediaImage: {
+      src: "/images/self-employed-v2.png",
+      alt: "Тёмная концептуальная сцена о сообществе самозанятых, курсах, заказах и коммуникациях.",
+    },
     links: [
       { label: "Ссылка на источник ФНС", url: "https://www.nalog.gov.ru/rn77/news/activities_fts/11816919/" },
       { label: "Ссылка на дизайн-офис", url: "https://www.figma.com/file/WHrmX3ihixyzFZGYhzEgPK/%D1%81%D0%BC%D0%B7?node-id=0%3A1" },
@@ -477,6 +508,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "НАВИГАТОР ДОСТУПНОСТИ",
     mediaCaption: "ACCESSIBLE MAP / ASSISTANCE",
+    mediaImage: {
+      src: "/images/accessibility-v2.png",
+      alt: "Светлая концептуальная карта города с оптимальным доступным маршрутом.",
+    },
     links: [
       { label: "Ссылка на архитектуру", url: "https://docs.google.com/document/d/1XQ_P04yYmZLyRvdPq5YL1gN4wtCy7a2h6cW-aECeakk/edit#heading=h.rn8h919zyemp" },
       { label: "Ссылка на блок-схему", url: "https://miro.com/app/board/uXjVPN6FG3c=/?share_link_id=322883191355" },
@@ -507,6 +542,10 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ЭЛЕКТРОННЫЕ ОЧЕРЕДИ",
     mediaCaption: "CITY MAP / QUEUE STATUS",
+    mediaImage: {
+      src: "/images/queues-v2.png",
+      alt: "Светлая концептуальная сцена о движении людей по единой электронной очереди к городским сервисам.",
+    },
     palette: ["#37c7d8", "#ffb35b"],
   },
   {
@@ -532,8 +571,13 @@ export const projects: Project[] = [
     stage: null,
     mediaLabel: "ЧАТ-БОТ ДЛЯ СОИСКАТЕЛЕЙ",
     mediaCaption: "CANDIDATE ↔ BOT ↔ EMPLOYER",
+    mediaImage: {
+      src: "/images/job-bot-v2.png",
+      alt: "Яркая неоновая концептуальная сцена о диалоге соискателя и чат-бота на тёмном фоне.",
+    },
     palette: ["#6f8cff", "#e97eff"],
   },
 ];
+
 
 

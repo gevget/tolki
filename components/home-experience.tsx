@@ -360,10 +360,16 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
               Наверх <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
-          <div className="closing-mark" aria-hidden="true">
+          <a
+            className="closing-mark"
+            href="https://talk.defisyou.site"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Перейти на сайт Talk.defisyou.site"
+          >
             <Plus size={80} strokeWidth={1} />
             <span>сделано с толком</span>
-          </div>
+          </a>
         </section>
 
         <footer className="footer section-dark">
