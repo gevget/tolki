@@ -65,7 +65,7 @@ function Sidebar({
     <aside className="sidebar" aria-label="Навигация по проектам">
       <div className="sidebar-top">
         <a className="brand-lockup" href="#intro" onClick={onNavigate}>
-          <span className="brand-name">толк+юсайт</span>
+          <span className="brand-name">толк+ЮСТ</span>
           <span className="brand-product">Наши идеи</span>
           <span className="brand-label">Product Lab</span>
         </a>
@@ -256,7 +256,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
       <Sidebar activeId={activeId} onNavigate={() => setActiveId("intro")} />
       <header className="mobile-topbar">
         <a href="#intro" className="mobile-brand">
-          <span>толк+юсайт</span>
+          <span>толк+ЮСТ</span>
           <span>Наши идеи</span>
         </a>
         <button type="button" onClick={() => setMenuOpen(true)} aria-label="Открыть список проектов">
@@ -269,7 +269,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
       <main className="main-content">
         <section className="hero section-light" id="intro" data-page-section aria-labelledby="hero-title">
           <div className="hero-content">
-            <span className="eyebrow">толк+юсайт / PRODUCT LAB</span>
+            <span className="eyebrow">толк+ЮСТ / PRODUCT LAB</span>
             <h1 id="hero-title">Наши идеи<span>.</span></h1>
             <p className="hero-lead">
               Продукты, сервисы и системы, которые мы придумываем, исследуем и превращаем в прототипы, пилоты и работающие решения.
@@ -281,7 +281,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
               </a>
             </div>
           </div>
-          <div className="hero-media" aria-label="толк+юсайт / наши идеи / product lab visual">
+          <div className="hero-media" aria-label="толк+ЮСТ / наши идеи / product lab visual">
             <div className="hero-media-image">
               <img
                 className="hero-media-image-art"
@@ -290,7 +290,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
               />
               <div className="hero-media-shade" aria-hidden="true" />
               <div className="hero-media-copy">
-                <span>толк+юсайт</span>
+                <span>толк+ЮСТ</span>
                 <strong>Идеи становятся реальностью.</strong>
                 <span>PRODUCT LAB VISUAL / 16:10</span>
               </div>
@@ -314,7 +314,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
               />
               <div className="manifesto-visual-meta" aria-hidden="true">
                 <span>IDEA → SYSTEM</span>
-                <span>толк+юсайт / 02</span>
+                <span>толк+ЮСТ / 02</span>
               </div>
             </div>
             <div className="manifesto-bottom">
@@ -351,7 +351,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
 
         <section className="closing section-light" id="closing" data-page-section aria-labelledby="closing-title">
           <div className="closing-copy">
-            <span className="eyebrow">толк+юсайт / PRODUCT LAB</span>
+            <span className="eyebrow">толк+ЮСТ / PRODUCT LAB</span>
             <h2 id="closing-title">Идей всегда больше, чем места на сайте.</h2>
             <p>
               Этот список не финальный. Некоторые продукты меняются по мере исследования, некоторые объединяются с другими направлениями, а некоторые остаются полезным экспериментом.
@@ -374,7 +374,7 @@ export function HomeExperience({ projects }: { projects: Project[] }) {
 
         <footer className="footer section-dark">
           <div>
-            <strong>толк+юсайт</strong>
+            <strong>толк+ЮСТ</strong>
             <span>Наши идеи / Product Lab</span>
           </div>
           <span>{new Date().getFullYear()}</span>
